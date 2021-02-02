@@ -1,0 +1,46 @@
+#app params
+promotion_type: 'food and drinks'
+radius: 100
+office:
+  city: dublin
+  coordinates:
+    lat: 53.339428
+    long: -6.257664
+
+url: 'https://s3.amazonaws.com/intercom-take-home-test/customers.txt'
+user_agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36'
+data_storage: 'src/data/customers.csv'
+export_path: 'src/output/output.json'
+
+earth_radius: 6371
+
+# logging
+version: 1
+disable_existing_loggers: false
+formatters:
+  user:
+    format: '[%(asctime)s][%(levelname)s] %(message)s'
+    datefmt: '%H:%M:%S'
+  simple:
+    format: '[%(asctime)s][%(name)s][%(levelname)s] %(message)s'
+    datefmt: '%m/%d/%Y %H:%M:%S'
+handlers:
+  console:
+    class: logging.StreamHandler
+    formatter: user
+    stream: 'ext://sys.stdout'
+  file:
+    class: logging.handlers.RotatingFileHandler
+    formatter: simple
+    filename: logs/file.log
+    maxBytes: 10485760 #10MB
+    backupCount: 20
+    encoding: utf8
+loggers:
+  dev:
+    level: INFO
+    handlers: [file, console]
+    propagate: false
+root:
+  level: INFO
+  handlers: [file, console]

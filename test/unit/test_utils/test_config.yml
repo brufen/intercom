@@ -1,0 +1,8 @@
+#app params
+promotion_type: 'test'
+radius: 100
+office:
+  city: dublin
+
+url: 'https://s3.amazonaws.com/intercom-take-home-test/customers.txt'
+user_agent: 'Mozilla'
