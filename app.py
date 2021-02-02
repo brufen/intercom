@@ -15,7 +15,7 @@ download_path = os.path.join(os.getcwd(), config['data_storage'])
 export_path = os.path.join(os.getcwd(), config['export_path'])
 
 def main():
-    logging.info('App started')
+    logging.info("App started")
     CustomerCrawler().run()
 
     if download_path:
@@ -24,7 +24,7 @@ def main():
         process_data.calc()
         return True
     else:
-        logging.info("Dataset is missing at the path ")
+        logging.info("Dataset is missing at the path")
         return False
 
 if __name__ == '__main__':

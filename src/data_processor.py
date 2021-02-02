@@ -29,7 +29,9 @@ class ProcessData:
                 customer = next(self.customer_loc)
                 distance = self.distance_calc_two(self.office_loc, customer)
                 if distance is not None:
-                    customer['distance'] = distance
+                    # customer['distance'] = distance
+                    del customer['longitude']
+                    del customer['latitude']
                     self.customers.append(customer)
             except StopIteration:
                 break

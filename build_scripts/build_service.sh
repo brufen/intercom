@@ -5,7 +5,7 @@ cd ..
 appname="Intercome app"
 
 echo "pulling changes"
-git pull https://brufen:password@git_hostname.com/my/repository
+git pull https://github.com/brufen/intercom.git
 
 
 echo "checking for new pip deps"
